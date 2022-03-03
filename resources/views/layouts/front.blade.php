@@ -137,24 +137,16 @@
     @endif
 
 
-    <!-- Inline Styles -->
-    <style>
-        body {
-            @if ($currentLang->rtl == 1)font-family: 'Cairo', sans-serif;
-        @else font-family: 'Poppins', sans-serif;
-            @endif
-        }
+    @if ($setting->loader_status == 1)
+        <!-- Inline Styles -->
+        <style>
+            .pace-cover {
+                background-image: url({!! $setting->loader_img !!});
+                background-color: {!! $setting->loader_color !!};
+            }
 
-        @if ($setting->custom_css){!! $setting->custom_css !!} @endif@if ($setting->loader_status == 1).pace-cover {
-            background-image: url({!! $setting->loader_img !!});
-            background-color: {!! $setting->loader_color !!};
-        }
-
-        @endif
-
-    </style>
-
-
+        </style>
+    @endif
 
 
 
